@@ -3,6 +3,7 @@ What makes a “Brilliant” Classical Music Piece: an AI classical piano music 
 
 Acknowledge: this project if forked from https://github.com/wazenmai/MIDI-BERT <br>
 Note: all the files are still in developing stage and some functions in the original repo may not be available here. <br>
+Files may include different absolute paths or relative path as the code are runned on different machines. 
 
 ## Preprocess data:
 Get the files and set things up: data_creation/prepare_data/main.py <br>

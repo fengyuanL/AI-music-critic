@@ -1,4 +1,4 @@
-### AI-music-critic
+# AI-music-critic
 What makes a “Brilliant” Classical Music Piece: an AI classical piano music critic <br>
 
 Acknowledge: this project if forked from https://github.com/wazenmai/MIDI-BERT <br>

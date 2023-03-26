@@ -175,7 +175,8 @@ class BERTTrainer:
                     'Loss: {:06f} | loss: {:03f}, {:03f}, {:03f}, {:03f} | acc: {:03f}, {:03f}, {:03f}, {:03f} \n'.format(
                         avg_accum_loss, *losses, *avg_accum_acc.tolist()))
                 avg_accum_acc, avg_accum_loss = [0] * len(self.midibert.e2w), 0
-                self.scheduler.step()
+                # For warmup
+                # self.scheduler.step()
 
             losses = list(map(float, losses))
             total_losses += total_loss.item()

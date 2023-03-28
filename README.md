@@ -9,7 +9,7 @@ Files may include different absolute paths or relative path as the code are runn
 MidiFiles: https://github.com/bytedance/GiantMIDI-Piano
 Create the dictionary from the midifiles: 
 Gather popularity index from Spotify: GetPopularity folder
-Scrape the year of composition: 
+Scrape the year of composition: get_composition folder
 
 ## Preprocess data:
 Get the files and set things up: data_creation/prepare_data/main.py <br>

@@ -24,10 +24,11 @@ Perform the training / validation / testing: MidiBERT/trainer.py <br>
 The model: MidiBERT/model.py <br>
 command to pretrain: <br>
 python3 MidiBERT/main.py --datasets GMP_1960 --name Pretrain1960 --batch_size 2 --epochs 30 --accum_grad 16 --cuda_devices 0 <br>
+Codes are modified to take in our new dataset, implement accumulated gradient, learning rate warmup, load from previous training.
 
 ## Finetune:
 Get dataset, load pretrained model, setup finetune model: MidiBERT/finetune.py <br>
-Perform the training / validation / testing for finetune: MidiBERT/trainer.py The file should only call functions start with reg_ for regression tasks. <br>
-The finetune model: MidiBERT/finetune_model.py <br>
+Perform the training / validation / testing for finetune: MidiBERT/trainer.py The file should only call newly added functions start with reg_ for our regression tasks. <br>
+The finetune model: MidiBERT/finetune_model.py The function should only call the newly added SequenceRegression <br>
 command to finetune: <br>
 python3 MidiBERT/finetune.py --task acclaimed --name Acclaimed1960 --ckpt result/pretrain/Pretrain1960/model_best.ckpt --datasets GMP_1960 --num_workers 8 --class_num 2 --batch_size 16 --epochs 30 --cuda_devices 0 <br>

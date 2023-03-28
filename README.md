@@ -6,10 +6,10 @@ Note: all the files are still in developing stage and some functions in the orig
 Files may include different absolute paths or relative path as the code are runned on different machines. 
 
 ## Data collection:
-MidiFiles: https://github.com/bytedance/GiantMIDI-Piano
-Create the dictionary from the midifiles: 
-Gather popularity index from Spotify: GetPopularity folder
-Scrape the year of composition: get_composition folder
+MidiFiles: https://github.com/bytedance/GiantMIDI-Piano <br>
+Create the dictionary from the midifiles: <br>
+Gather popularity index from Spotify: GetPopularity folder <br>
+Scrape the year of composition: get_composition folder <br>
 
 ## Preprocess data:
 Get the files and set things up: data_creation/prepare_data/main.py <br>

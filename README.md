@@ -7,7 +7,7 @@ Files may include different absolute paths or relative path as the code are runn
 
 ## Data collection:
 MidiFiles: https://github.com/bytedance/GiantMIDI-Piano <br>
-Create the dictionary from the midifiles: <br>
+Create the dictionary from the midifiles: DataGather.ipynb <br>
 Gather popularity index from Spotify: GetPopularity folder <br>
 Scrape the year of composition: get_composition folder <br>
 

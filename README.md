@@ -1,9 +1,15 @@
 # AI-music-critic
 What makes a “Brilliant” Classical Music Piece: an AI classical piano music critic <br>
 
-Acknowledge: this project if forked from https://github.com/wazenmai/MIDI-BERT <br>
+Acknowledge: this project if forked from https://github.com/wazenmai/MIDI-BERT (folders MidiBERT, data_creations) and modified for our own tasks.<br>
 Note: all the files are still in developing stage and some functions in the original repo may not be available here. <br>
 Files may include different absolute paths or relative path as the code are runned on different machines. 
+
+## Data collection:
+MidiFiles: https://github.com/bytedance/GiantMIDI-Piano
+Create the dictionary from the midifiles: 
+Gather popularity index from Spotify: GetPopularity folder
+Scrape the year of composition: 
 
 ## Preprocess data:
 Get the files and set things up: data_creation/prepare_data/main.py <br>

@@ -17,6 +17,7 @@ Process each file: data_creation/prepare_data/model.py <br>
 command to preprocess data: <br>
 python3 data_creation/prepare_data/main.py --task acclaimed --dataset GMP_1960 --name GMP_1960 <br>
 python3 data_creation/prepare_data/main.py --task acclaimed --dataset GMP_Post1960 --name GMP_Post1960 <br>
+Rescale and merge the data: merge.py <br>
 
 ## Pretrain:
 Load the data, setup the model, iterate all epochs: MidiBERT/main.py <br> 
@@ -32,3 +33,13 @@ Perform the training / validation / testing for finetune: MidiBERT/trainer.py Th
 The finetune model: MidiBERT/finetune_model.py The function should only call the newly added SequenceRegression <br>
 command to finetune: <br>
 python3 MidiBERT/finetune.py --task acclaimed --name Acclaimed1960 --ckpt result/pretrain/Pretrain1960/model_best.ckpt --datasets GMP_1960 --num_workers 8 --class_num 2 --batch_size 16 --epochs 30 --cuda_devices 0 <br>
+
+## Ensemble and evaluation:
+Main function to call ensemble for MidiBERT/Ensemble.py <br>
+Collect data with augmentation and call the model: MidiBERT/EnsembleCP.py <br>
+Execute evaluation: MidiBERT/EnsembleFT.py <br>
+
+## Analysis:
+Compute the ensembled results: TODO <br>
+T-test and p-values: TODO <br>
+Analysis results: TODO excel <br>

@@ -1,0 +1,2 @@
+Loading pre-trained model from model_best.ckpt
+Epoch 1: train_loss=8.6837, valid_loss=9.5051, test_loss=9.2834, train_acc=0.6844, valid_acc=0.7012, test_acc=0.6891, train_accl=0.1241, valid_accl=0.0838, test_accl=0.1233, train_accr=0.5603, valid_accr=0.6174, test_accr=0.5658, train_acclf=0.3347, valid_acclf=0.3595, test_acclf=0.3545, train_acclt=0.8901, valid_acclt=0.8159, test_acclt=0.8631, train_type1=0.2465, train_type2=0.0691, valid_type1=0.1634, valid_type2=0.1354, test_type1=0.224, test_type2=0.0868

@@ -1,0 +1,2 @@
+python3 MidiBERT/finetune.py --task acclaimed --name AcclaimedPT --ckpt result/pretrain/1960/model_best.ckpt --datasets GMP_1960 --num_workers 8 --class_num 2 --batch_size 16 --epochs 2 --cuda_devices 0
+accum_grad 64

@@ -1,0 +1,10 @@
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Loading pre-trained model from model_best.ckpt
+Epoch 1: train_loss=9.65, valid_loss=12.5883, test_loss=13.0429, train_acc=0.3743, valid_acc=0.3995, test_acc=0.3672, train_accl=0.0303, valid_accl=0.0233, test_accl=0.0203, train_accr=0.1773, valid_accr=0.266, test_accr=0.2317, train_acclf=0.7033, valid_acclf=0.4538, test_acclf=0.428, train_acclt=0.6432, valid_acclt=0.7499, test_acclt=0.7081, train_type1=0.1528, train_type2=0.1731, valid_type1=0.2859, valid_type2=0.1174, test_type1=0.3102, test_type2=0.1319
+Epoch 2: train_loss=5.91, valid_loss=14.6632, test_loss=14.4832, train_acc=0.5699, valid_acc=0.4095, test_acc=0.3932, train_accl=0.1193, valid_accl=0.1123, test_accl=0.1073, train_accr=0.3069, valid_accr=0.1734, test_accr=0.1518, train_acclf=0.826, valid_acclf=0.7302, test_acclf=0.7078, train_acclt=0.7943, valid_acclt=0.4738, test_acclt=0.4429, train_type1=0.0898, train_type2=0.1, valid_type1=0.142, valid_type2=0.252, test_type1=0.1588, test_type2=0.2579

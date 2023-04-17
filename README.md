@@ -40,8 +40,8 @@ Collect data with augmentation and call the model: MidiBERT/EnsembleCP.py <br>
 Execute evaluation: MidiBERT/EnsembleFT.py <br>
 
 ## Analysis:
-Compute the ensembled results: TODO <br>
-T-test and p-values: TODO <br>
-Analysis results: TODO excel <br>
+Compute the ensembled results: Ensemble/ compute accuracy and loss for dataset of each time node <br>
+T-test and p-values: Entropy and t_test/t_test.py <br>
+Analysis results: entropy caluclation: Entropy and t_test/entropy.py <br>
 
 If you are interested in the processed datasets, trained models, please contact the author directly.

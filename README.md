@@ -43,3 +43,5 @@ Execute evaluation: MidiBERT/EnsembleFT.py <br>
 Compute the ensembled results: TODO <br>
 T-test and p-values: TODO <br>
 Analysis results: TODO excel <br>
+
+If you are interested in the processed datasets, trained models, please contact the author directly.

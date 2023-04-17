@@ -17,7 +17,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='')
 
     ### path setup ###
-    parser.add_argument('--dict_file', type=str, default='D:/UT/ECE324/MIDI-BERT/data_creation/prepare_data/dict/CP.pkl')
+    parser.add_argument('--dict_file', type=str, default='data_creation/prepare_data/dict/CP.pkl')
     parser.add_argument('--name', type=str, default='MidiBert')
 
     ### pre-train dataset ###
@@ -45,10 +45,10 @@ def get_args():
 
 def load_data(datasets):
     to_concat = []
-    root = 'F:/CDF/MIDI-BERT/Data/CP_data'
+    root = 'Data/CP_data'
 
     for dataset in datasets:
-        if dataset in {'pop909', 'composer', 'emopia', 'GMP', 'GMP_mini', 'GMP_1960', 'GMP_Post1960'}:
+        if dataset in {'pop909', 'composer', 'emopia', 'GMP', 'GMP_mini', 'GMP_1960', 'GMP_Post1960', 'GMP_2023', 'GMP_1910'}:
             X_train = np.load(os.path.join(root, f'{dataset}_train.npy'), allow_pickle=True)
             X_valid = np.load(os.path.join(root, f'{dataset}_valid.npy'), allow_pickle=True)
             X_test = np.load(os.path.join(root, f'{dataset}_test.npy'), allow_pickle=True)
@@ -107,7 +107,7 @@ def main():
     midibert = MidiBert(bertConfig=configuration, e2w=e2w, w2e=w2e)
 
     # checkpoint = torch.load('result/finetune/pretrain_model.ckpt')
-    checkpoint = torch.load('F:/CDF/MIDI-BERT/result/pretrain/Pretrain1960/warmup.ckpt')
+    checkpoint = torch.load('result/pretrain/1960/warmup.ckpt')
     midibert.load_state_dict(checkpoint['state_dict'])
 
     print("\nCreating BERT Trainer")
@@ -115,7 +115,7 @@ def main():
                           args.mask_percent, args.accum_grad, args.cpu, args.cuda_devices)
     
     print("\nTraining Start")
-    save_dir = 'F:/CDF/MIDI-BERT/result/pretrain/' + args.name
+    save_dir = 'result/pretrain/' + args.name
     os.makedirs(save_dir, exist_ok=True)
     filename = os.path.join(save_dir, 'model.ckpt')
     print("   save model at {}".format(filename))

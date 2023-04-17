@@ -9,7 +9,7 @@ from transformers import BertModel
 class Embeddings(nn.Module):
     def __init__(self, n_token, d_model):
         super().__init__()
-        self.lut = nn.Embedding(n_token, d_model)
+        self.lut = nn.Embedding(torch.tensor(n_token), torch.tensor(d_model))
         self.d_model = d_model
 
     def forward(self, x):
@@ -43,7 +43,7 @@ class MidiBert(nn.Module):
         # word_emb: embeddings to change token ids into embeddings
         self.word_emb = []
         for i, key in enumerate(self.classes):
-            self.word_emb.append(Embeddings(self.n_tokens[i], self.emb_sizes[i]))
+            self.word_emb.append(Embeddings(torch.tensor(self.n_tokens[i]), torch.tensor(self.emb_sizes[i])))
         self.word_emb = nn.ModuleList(self.word_emb)
 
         # linear layer to merge embeddings from different token types 

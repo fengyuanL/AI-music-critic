@@ -64,7 +64,7 @@ def load_data(dataset, task):
 
     if dataset not in ['pop909', 'composer', 'emopia', 'GMP', 'GMP_1960', 'GMP_Post1960', 'GMP_mini']:
         print(f'Dataset {dataset} not supported')
-        exit(1)
+        # exit(1)
 
     X_train = np.load(os.path.join(data_root, f'{dataset}_train.npy'), allow_pickle=True)
     X_val = np.load(os.path.join(data_root, f'{dataset}_valid.npy'), allow_pickle=True)
@@ -154,7 +154,7 @@ def main():
     filename = os.path.join(save_dir, 'FTmodel.ckpt')
     print("   save model at {}".format(filename))
 
-    best_acc, best_epoch = 0, 0
+    best_loss, best_epoch = 0, 0
     bad_cnt = 0
 
     train_accs, valid_accs = [], []
@@ -165,15 +165,15 @@ def main():
             valid_loss, valid_acc, valid_accl, valid_accr, valid_acclf, valid_acclt, valid_type1, valid_type2 = trainer.valid()
             test_loss, test_acc, test_accl, test_accr, test_acclf, test_acclt, test_type1, test_type2, _ = trainer.test()
 
-            is_best = valid_acc >= best_acc
-            best_acc = max(valid_acc, best_acc)
+            is_best = valid_loss >= best_loss
+            best_loss = max(valid_loss, best_loss)
 
             if is_best:
                 bad_cnt, best_epoch = 0, epoch
             else:
                 bad_cnt += 1
 
-            print('epoch: {}/{} | Train Loss: {} | Train acc: {} | Train accl: {} | Train accr: {} | Train acclf: {} | Train acclt: {} | Train Type1: {} | Train Type2: {} | Valid Loss: {} | Valid acc: {} | Valid Type1: {} | Valid accl: {} | Valid accr: {} | Valid acclf: {} | Valid acclt: {} | Valid Type2: {} | Test loss: {} | Test acc: {} | Test accl: {} | Test acclf: {} |Test acclt: {} | Test accr: {} | Test Type1: {} | Test Type2: {} '.format(epoch+1, args.epochs, train_loss, train_acc, train_accl, train_accr, train_acclf, train_acclt, train_type1, train_type2, valid_loss, valid_acc, valid_accl, valid_accr, valid_acclf, valid_acclt, valid_type1, valid_type2, test_loss, test_acc, test_accl, test_accr, test_acclf, test_acclt, test_type1, test_type2))
+            print('epoch: {}/{} | Train Loss: {} | Train acc: {} | Train accl: {} | Train accr: {} | Train acclf: {} | Train acclt: {} | Train Type1: {} | Train Type2: {} | Valid Loss: {} | Valid acc: {} | Valid accl: {} | Valid accr: {} | Valid acclf: {} | Valid acclt: {} | Valid Type1: {} | Valid Type2: {} | Test loss: {} | Test acc: {} | Test accl: {} | Test acclf: {} |Test acclt: {} | Test accr: {} | Test Type1: {} | Test Type2: {} '.format(epoch+1, args.epochs, train_loss, train_acc, train_accl, train_accr, train_acclf, train_acclt, train_type1, train_type2, valid_loss, valid_acc, valid_accl, valid_accr, valid_acclf, valid_acclt, valid_type1, valid_type2, test_loss, test_acc, test_accl, test_accr, test_acclf, test_acclt, test_type1, test_type2))
 
             train_accs.append(train_acc)
             valid_accs.append(valid_acc)

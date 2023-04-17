@@ -55,13 +55,16 @@ class SequenceRegression(nn.Module):
     def __init__(self, midibert, var_num, hs, da=128, r=4):
         super(SequenceRegression, self).__init__()
         self.midibert = midibert
+        for param in self.midibert.bert.encoder.layer[0:10].parameters():
+            param.requires_grad = False
         self.attention = SelfAttention(hs, da, r)
         self.regression = nn.Sequential(
-            nn.Linear(hs*r, 256),
+            nn.Dropout(0.1),
+            nn.Linear(hs*r,256),
             nn.ReLU(),
-            nn.Linear(256, 64),
-            nn.ReLU(),
-            nn.Linear(64, var_num)
+            # nn.Linear(256, 64),
+            # nn.ReLU(),
+            nn.Linear(256, var_num)
         )
 
     def forward(self, x, attn, layer):             # x: (batch, 512, 4)
